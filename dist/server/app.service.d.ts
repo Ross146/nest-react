@@ -1,4 +1,4 @@
-import { HelloResponse } from "../common/HelloResponse";
+import { ArticleListResponse } from "../common/ArticleListResponse";
 export declare class AppService {
-    getHello(): HelloResponse;
+    getHello(): ArticleListResponse;
 }

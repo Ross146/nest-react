@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import {ArticleModule} from "./article/article.module";
 import * as path from "path";
@@ -15,6 +14,6 @@ import * as path from "path";
     })
   ],
   controllers: [],
-  providers: [AppService],
+  providers: [],
 })
 export class AppModule {}
