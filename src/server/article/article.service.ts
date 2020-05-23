@@ -14,4 +14,8 @@ export class ArticleService {
   getList(): Promise<ArticleListResponse> {
     return promisifiedReadDir(path.join(this._configService.get('dataPath'), 'articles'))
   }
+
+  getArticle(name: string) {
+    return fs.createReadStream(path.join(this._configService.get('dataPath'), 'articles', name))
+  }
 }

@@ -1,12 +1,21 @@
-import {Controller, Get} from "@nestjs/common";
+import {Controller, Get, Res, Param, Header} from "@nestjs/common";
+import { Response } from 'express';
 import {ArticleService} from "./article.service";
 
 @Controller('api/article')
 export class ArticleController {
   constructor(private readonly _articleService: ArticleService) {}
 
-  @Get('/')
+  @Get('/list')
   getAll() {
     return this._articleService.getList();
+  }
+
+  @Get('/:name')
+  @Header('Content-Type', 'application/text')
+  getArticle(@Res() res: Response, @Param('name') name: string) {
+    const fileStream = this._articleService.getArticle(name);
+
+    fileStream.pipe(res);
   }
 }

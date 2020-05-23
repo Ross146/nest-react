@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import {ArticleModule} from "./article/article.module";
 import * as path from "path";
+import {AppController} from "./app.controller";
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import * as path from "path";
       isGlobal: true
     })
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule {}

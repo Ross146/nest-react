@@ -11,6 +11,7 @@ const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const article_module_1 = require("./article/article.module");
 const path = require("path");
+const app_controller_1 = require("./app.controller");
 let AppModule = (() => {
     let AppModule = class AppModule {
     };
@@ -25,7 +26,7 @@ let AppModule = (() => {
                     isGlobal: true
                 })
             ],
-            controllers: [],
+            controllers: [app_controller_1.AppController],
             providers: [],
         })
     ], AppModule);

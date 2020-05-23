@@ -24,6 +24,9 @@ let ArticleService = (() => {
         getList() {
             return promisifiedReadDir(path.join(this._configService.get('dataPath'), 'articles'));
         }
+        getArticle(name) {
+            return fs.createReadStream(path.join(this._configService.get('dataPath'), 'articles', name));
+        }
     };
     ArticleService = __decorate([
         common_1.Injectable(),
